@@ -64,4 +64,4 @@ COPY --chown=${CURRENT_USER} tests /home/app/app/tests/
 COPY --chown=${CURRENT_USER} data data/
 RUN /home/app/.local/bin/poetry install
 
-CMD ["poetry", "run", "python", "src/nflai/app.py"]
+CMD ["poetry", "run", "python", "src/py_app_docker/app.py"]

@@ -23,7 +23,7 @@ resource "docker_container" "pyhack" {
   image = docker_image.pyhack.image_id
   name  = "pyhack"
   depends_on = [docker_image.pyhack]
-  command = ["poetry", "run", "python", "src/nflai/app.py"]
+  command = ["poetry", "run", "python", "src/py_app_docker/app.py"]
 
   ports {
     internal = 5000
@@ -34,7 +34,7 @@ resource "docker_container" "pyhack" {
     "COLORTERM=truecolor",
   ]
   volumes {
-    host_path      = "/Users/andy/ws/projects/nflai/data"
+    host_path      = "/Users/andy/ws/projects/py_app_docker/data"
     container_path = "/home/app/data"
   }
 }
