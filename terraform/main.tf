@@ -23,7 +23,8 @@ resource "docker_container" "pyhack" {
   image = docker_image.pyhack.image_id
   name  = "pyhack"
   depends_on = [docker_image.pyhack]
-  command = ["poetry", "run", "python", "src/py_app_docker/app.py"]
+  command = ["tail", "-f", "/dev/null"]
+  # ["poetry", "run", "python", "src/py_app_docker/app.py"]
 
   ports {
     internal = 5000
